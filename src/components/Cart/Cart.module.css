@@ -1,12 +1,20 @@
 .cart {
-  max-width: 30rem;
-  background-color: #313131;
+  max-width: 300px;
+  background-color: rgba(255, 255, 255, 0.1);
   color: white;
+  border: 1px solid aquamarine;
+  margin-left: calc(75% - 150px);
+  position: fixed;
+  top: 13%;
+  height: 60%;
+  overflow-y: auto;
+  z-index: 9;
 }
 
 .cart h2 {
   font-size: 1.25rem;
   margin: 0.5rem 0;
+  color: aquamarine;
 }
 
 .cart ul {

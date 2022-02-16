@@ -11,14 +11,16 @@
 
 .price {
   border-radius: 30px;
-  padding: 0.15rem 1.5rem;
-  background-color: #3a3a3a;
-  color: white;
-  font-size: 1.5rem;
+  color: salmon;
+  font-size: 2rem;
+  position: relative;
+  top: 1rem;
+  font-style: italic;
 }
 
 .item p {
-  color: #3a3a3a;
+  color: #727272;
+  font-size: 0.7rem;
 }
 
 .actions {

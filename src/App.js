@@ -9,8 +9,8 @@ function App() {
 
   return (
     <Layout>
-      {showCart && <Cart />}
       <Products />
+      {showCart && <Cart />}
     </Layout>
   );
 }
