@@ -1,0 +1,79 @@
+.notification {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  border-radius: 14px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  border: 1px solid #ffffff55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.triangle {
+  position: relative;
+  top: -2.2rem;
+  left: 9rem;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 7.5px 15px 7.5px;
+}
+
+.error {
+  background: linear-gradient(100deg, rgb(255, 91, 72), rgb(255, 96, 78));
+}
+.error .triangle {
+  border-color: transparent transparent rgb(255, 96, 78) transparent;
+}
+
+.success {
+  background: linear-gradient(100deg, rgb(12, 220, 175), rgb(27, 225, 133));
+}
+
+.success .triangle {
+  border-color: transparent transparent #1ae08b transparent;
+}
+
+.animation {
+  animation: disappear 3s 1 ease-in-out;
+  -webkit-animation: disappear 3s 1 ease-in-out;
+}
+
+.notification h2 {
+  font-size: 1rem;
+  margin-right: 5px;
+}
+
+.notification p {
+  font-size: 0.87rem;
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 0;
+    top: 1rem;
+  }
+  5% {
+    opacity: 0.8;
+    top: 1.8rem;
+  }
+  10% {
+    opacity: 1;
+    top: 2rem;
+  }
+  90% {
+    opacity: 1;
+    top: 2rem;
+  }
+  95% {
+    opacity: 0.8;
+    top: 1.8rem;
+  }
+  100% {
+    opacity: 0;
+    top: 1rem;
+  }
+}
