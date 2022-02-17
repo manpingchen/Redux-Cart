@@ -51,7 +51,7 @@ function App() {
         })
       );
     });
-  }, [cart]);
+  }, [cart, dispatch]);
 
   useEffect(() => {
     if (notificationObj && !isInitial) {
@@ -60,7 +60,7 @@ function App() {
         clearTimeout(timer);
       }, 3800);
     }
-  }, [notificationObj]);
+  }, [notificationObj, dispatch]);
 
   return (
     <Layout>
