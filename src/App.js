@@ -5,7 +5,7 @@ import Cart from "./components/Cart/Cart";
 import Layout from "./components/Layout/Layout";
 import Products from "./components/Shop/Products";
 import Notification from "./components/UI/Notification";
-import { uiActions } from "./store/ui-slice";
+import { sendCartData } from "./store/cart-slice";
 
 let isInitial = true;
 
@@ -16,51 +16,13 @@ function App() {
   const notificationObj = useSelector((state) => state.ui.isNotificationShown);
 
   useEffect(() => {
-    const sendCartData = async () => {
-      dispatch(uiActions.showNotification(false));
-      const response = await fetch(
-        "https://react-movie-890b6-default-rtdb.firebaseio.com/cart.json",
-        {
-          method: "PUT",
-          body: JSON.stringify(cart),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error("Sending Cart Failed");
-      }
-
-      dispatch(
-        uiActions.showNotification({
-          status: "success",
-          title: "Hooray!",
-          message: "Cart updated!",
-        })
-      );
-    };
     if (isInitial) {
       isInitial = false;
       return;
     }
-    sendCartData().catch(() => {
-      dispatch(
-        uiActions.showNotification({
-          status: "error",
-          title: "Oops!",
-          message: "Cart updated failed!",
-        })
-      );
-    });
-  }, [cart, dispatch]);
 
-  useEffect(() => {
-    if (notificationObj && !isInitial) {
-      const timer = setTimeout(() => {
-        dispatch(uiActions.showNotification(false));
-        clearTimeout(timer);
-      }, 3800);
-    }
-  }, [notificationObj, dispatch]);
+    dispatch(sendCartData(cart));
+  }, [cart, dispatch]);
 
   return (
     <Layout>
