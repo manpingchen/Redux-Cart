@@ -9,7 +9,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
 }
 
 .triangle {
@@ -45,6 +44,7 @@
 .notification h2 {
   font-size: 1rem;
   margin-right: 5px;
+  margin-left: -15px;
 }
 
 .notification p {

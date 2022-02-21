@@ -34,3 +34,8 @@
   display: block;
   font-weight: bold;
 }
+
+.badge-loading {
+  font-size: 3rem;
+  display: block;
+}
